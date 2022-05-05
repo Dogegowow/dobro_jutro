@@ -9,7 +9,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-  print(dir(motor))
   return render_template("index.html")
 
 @app.route("/motor/<id>")
