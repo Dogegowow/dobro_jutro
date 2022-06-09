@@ -24,7 +24,7 @@ def run(stepPin, dirPin, dir, mos, dist):
     delay = .005 / 12
     GPIO.output(mos, GPIO.HIGH)
     GPIO.output(dirPin, dir)
-    for x in range(int(dist*3200)):
+    for x in range(int(dist*200)):
         GPIO.output(stepPin, GPIO.HIGH)
         sleep(delay)
         GPIO.output(stepPin, GPIO.LOW)
