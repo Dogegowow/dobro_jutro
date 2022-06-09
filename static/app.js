@@ -83,7 +83,7 @@ noUiSlider.create(handlesSlider4, {
   $("#zacni").click(function() {
     console.log("zacni")
     $.get( "/motor/0/" + String(vrednost1) + "/1/" + String(vrednost2) + "/2/" + String(vrednost3), function( data ) {
-        
+        console.log("/motor/0/" + String(vrednost1) + "/1/" + String(vrednost2) + "/2/" + String(vrednost3))
       }).done(function() {
           console.log("done")
       })    
