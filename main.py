@@ -13,8 +13,6 @@ def home():
 
 @app.route("/motor/<id1>/<obrati1>/<id2>/<obrati2>/<id3>/<obrati3>")
 def run_motor(id1, obrati1, id2, obrati2, id3, obrati3):
-  print("Motor " + id + " pognan za " + obrati)
-  print(type(obrati))
   motors = [
     {
       "dir": 16,
