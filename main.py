@@ -14,6 +14,7 @@ def home():
 @app.route("/motor/<id>/<obrati>")
 def run_motor(id, obrati):
   print("Motor " + id + " pognan za " + obrati)
+  print(type(obrati))
   motors = [
     {
       "dir": 16,
@@ -39,9 +40,9 @@ def run_motor(id, obrati):
   
   #for m in motors:
   motor.setup(motors[int(id)]["step"], motors[int(id)]["dir"], motors[int(id)]["mos"])
-
+  
   #for m in motors:
-  motor.run(motors[int(id)]["step"], motors[int(id)]["dir"], CCW, motors[int(id)]["mos"], obrati) # tukaj pride spremenljivka iz url-ja
+  motor.run(motors[int(id)]["step"], motors[int(id)]["dir"], CCW, motors[int(id)]["mos"], int(obrati)) # tukaj pride spremenljivka iz url-ja
 
   return redirect(url_for("home"))
 
