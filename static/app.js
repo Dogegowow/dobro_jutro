@@ -83,21 +83,20 @@ noUiSlider.create(handlesSlider4, {
   $("#zacni").click(function() {
     console.log("zacni")
     $.get( "/motor/0/" + String(vrednost1), function( data ) {
-        console.log("data")
-        .done(function() {
+        //console.log("data")
+        
+      }).done(function() {
           alert( "konec 1" );
-        })
-      });
+        });
     $.get( "/motor/1/" + String(vrednost2), function( data ) {
-        .done(function() {
+      }).done(function() {
           alert( "konec 2" );
-        })
-      });
+        });
     $.get( "/motor/2/" + String(vrednost3), function( data ) {
-        .done(function() {
+        
+      }).done(function() {
           alert( "konec 3" );
-        })
-      });
+        });
   })
 
     $(".next-step").click(function(){
