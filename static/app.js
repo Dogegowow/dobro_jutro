@@ -82,21 +82,11 @@ noUiSlider.create(handlesSlider4, {
 // tole sporžimo ko se klikne na en gumb
   $("#zacni").click(function() {
     console.log("zacni")
-    $.get( "/motor/0/" + String(vrednost1), function( data ) {
-        //console.log("data")
+    $.get( "/motor/0/" + String(vrednost1) + "/1/" + String(vrednost2) + "/2/" + String(vrednost3), function( data ) {
         
       }).done(function() {
-          $.get( "/motor/1/" + String(vrednost2), function( data ) {
-      }).done(function() {
-          $.get( "/motor/2/" + String(vrednost3), function( data ) {
-        
-      }).done(function() {
-          alert( "konec 3" );
-        });
-        });
-        });
-    
-    
+          console.log("done")
+      })    
   })
 
     $(".next-step").click(function(){
