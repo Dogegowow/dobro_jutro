@@ -1,0 +1,26 @@
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+.size {
+  border: 1px solid transparent
+}
+
+
+.selected-size {
+  border: 1px solid #2e7d32;
+}
+
+.screen {
+  display: none;
+}
+
+.screen .card {
+cursor: pointer;
+}

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script type="module">
+  import noUiSlider from '/static/nouislider/nouislider.mjs';
+</script>
   <style>
     .text {
       text-align: center;
@@ -18,16 +21,9 @@
 <body>
 <h1 class = "text">Dobro jutro</h1>
 
-<!-- step 1 -->
-  <!--
-  <div class="container step step1">
-    <a class="waves-effect waves-light btn gumb" var x1 = document.createElement("1")><i class="material-icons left">local_cafe</i>Granola</a>
-    <a class="waves-effect waves-light btn gumb" var x2 = document.createElement("2")><i class="material-icons left">local_drink</i>Cokolesnik</a>
-    <a class="waves-effect waves-light btn gumb" var x3 = document.createElement("3")><i class="material-icons left">local_drink</i>Ovseni kosmici</a>
-  </div>
--->
+  <p class="pageNumber">Korak <span id="currentPage"></span> od <span id="lastPage"></span> </p>
 <!-- step 2 -->  
-  <div class = "row step1 container text">  
+    <div class = "row step1 container text">  
     <div class = "card step col s4 step step1" id = "S">
       <div class="card-image waves-effect waves-block waves-light">
       </div>
@@ -36,6 +32,7 @@
         <p><p>Izberi</p></p>
       </div>
     </div>
+  
     
     <div class = "card step col s4 step step1" id = "M">
       <div class="card-image waves-effect waves-block waves-light">
@@ -45,7 +42,7 @@
         <p><p>Izberi</p></p>
       </div>
     </div>
-    
+
     <div class = "card step col s4 step step1" id = "L">
       <div class="card-image waves-effect waves-block waves-light">
       </div>
@@ -54,16 +51,36 @@
         <p><p>Izberi</p></p>
       </div>
       </div>
+      <div class = "row container">
+        <a class="waves-effect step1 btn-small container col s2" id = "potrdi">Potrdi</a>
   </div>
-  <div class = "row container">
-  <a class="waves-effect step1 btn-small container col s2" id = "potrdi">Potrdi</a>
+    </div>
+
+
+
+  
+  
+  <div class = "row container step step2">
+    
+    <div id="slider-handles4"></div>
+    
+    <script>
+    
+
+    </script>
+
+    
+
+        
+    
   </div>
-  <div class = "container step step2">
+
+  
+  <!--
     <a class="waves-effect waves-light btn" href="/motor/0"><i class="material-icons left">local_cafe</i>Granola</a>
     <a class="waves-effect waves-light btn" href="/motor/1"><i class="material-icons left">local_cafe</i>Cokolesnik</a>
     <a class="waves-effect waves-light btn" href="/motor/2"><i class="material-icons left">local_cafe</i>Ovseni kosmici</a>
-  </div>
-
+  -->
   <style>
     .step {
       display: none;
@@ -77,7 +94,14 @@
   <script>
     
 
+    let currentStep = 1
+    let lastStep = 4
     // # za id, . za class
+    $(document).ready(function(){
+      $("#currentPage").text(currentStep)
+      console.log("1")
+      $("#lastPage").text(lastStep)
+    })
     $(".step").click(function(){
       let gumb = (this.id)
       const gumbi = document.getElementsByClassName("card step col s4 step step1"); 

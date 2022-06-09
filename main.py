@@ -9,11 +9,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-  return render_template("index(test).html")
+  return render_template("app.html")
 
-@app.route("/motor/<id>")
-def run_motor(id):
-  print("Motor " + id + " pognan")
+@app.route("/motor/<id>/<obrati>")
+def run_motor(id, obrati):
+  print("Motor " + id + " pognan za " + obrati)
   motors = [
     {
       "dir": 16,
@@ -41,7 +41,7 @@ def run_motor(id):
   motor.setup(motors[int(id)]["step"], motors[int(id)]["dir"], motors[int(id)]["mos"])
 
   #for m in motors:
-  motor.run(motors[int(id)]["step"], motors[int(id)]["dir"], CCW, motors[int(id)]["mos"], 1)
+  motor.run(motors[int(id)]["step"], motors[int(id)]["dir"], CCW, motors[int(id)]["mos"], obrati) # tukaj pride spremenljivka iz url-ja
 
   return redirect(url_for("home"))
 
