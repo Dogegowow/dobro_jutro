@@ -85,6 +85,12 @@ noUiSlider.create(handlesSlider4, {
     $.get( "/motor/0/" + String(vrednost1), function( data ) {
         //console.log(data)
       });
+    $.get( "/motor/1/" + String(vrednost2), function( data ) {
+        //console.log(data)
+      });
+    $.get( "/motor/2/" + String(vrednost3), function( data ) {
+        //console.log(data)
+      });
   })
 
     $(".next-step").click(function(){
