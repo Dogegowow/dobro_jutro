@@ -37,14 +37,14 @@ def run_motor(id1, obrati1, id2, obrati2, id3, obrati3):
   CCW = 0    # Counterclockwise Rotation
   
   #for m in motors:
-  motor.setup(motors[int(id1)]["step"], motors[int(id)]["dir"], motors[int(id1)]["mos"])
-  motor.setup(motors[int(id2)]["step"], motors[int(id)]["dir"], motors[int(id2)]["mos"])
-  motor.setup(motors[int(id3)]["step"], motors[int(id)]["dir"], motors[int(id3)]["mos"])
+  motor.setup(motors[int(id1)]["step"], motors[int(id1)]["dir"], motors[int(id1)]["mos"])
+  motor.setup(motors[int(id2)]["step"], motors[int(id2)]["dir"], motors[int(id2)]["mos"])
+  motor.setup(motors[int(id3)]["step"], motors[int(id3)]["dir"], motors[int(id3)]["mos"])
   
   #for m in motors:
-  motor.run(motors[int(id)]["step"], motors[int(id)]["dir"], CCW, motors[int(id1)]["mos"], float(obrati1)) # tukaj pride spremenljivka iz url-ja
-  motor.run(motors[int(id)]["step"], motors[int(id)]["dir"], CCW, motors[int(id2)]["mos"], float(obrati2)) # tukaj pride spremenljivka iz url-ja
-  motor.run(motors[int(id)]["step"], motors[int(id)]["dir"], CCW, motors[int(id3)]["mos"], float(obrati3)) # tukaj pride spremenljivka iz url-ja
+  motor.run(motors[int(id1)]["step"], motors[int(id1)]["dir"], CCW, motors[int(id1)]["mos"], float(obrati1)) # tukaj pride spremenljivka iz url-ja
+  motor.run(motors[int(id2)]["step"], motors[int(id2)]["dir"], CCW, motors[int(id2)]["mos"], float(obrati2)) # tukaj pride spremenljivka iz url-ja
+  motor.run(motors[int(id3)]["step"], motors[int(id3)]["dir"], CCW, motors[int(id3)]["mos"], float(obrati3)) # tukaj pride spremenljivka iz url-ja
 
   return redirect(url_for("home"))
 
