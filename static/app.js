@@ -64,9 +64,9 @@ noUiSlider.create(handlesSlider4, {
     vrednost1 =  parseInt(kosmic1) / 100 *  parseInt(velikostPorcije);
     vrednost2 =  parseInt(kosmic2) / 100 *  parseInt(velikostPorcije);
     vrednost3 =  parseInt(kosmic3) / 100 *  parseInt(velikostPorcije);
-    console.log(Math.round(vrednost1 * 10) / 10 + " obratov");
-    console.log(Math.round(vrednost2 * 10) / 10 + " obratov");
-    console.log(Math.round(vrednost3 * 10) / 10 + " obratov");
+    //console.log(Math.round(vrednost1 * 10) / 10 + " obratov");
+    //console.log(Math.round(vrednost2 * 10) / 10 + " obratov");
+    //console.log(Math.round(vrednost3 * 10) / 10 + " obratov");
     // mala: 1, srednja: 2, velika: 3
     // 1 obrat motorja = 0.1
     // razmerje: 0.25, 0.50, 0.25 -> mala porcija: 0.25, 0.5, 0.25, srednja porcija: 0.5, 1. 0.5 ..
@@ -84,12 +84,19 @@ noUiSlider.create(handlesSlider4, {
     console.log("zacni")
     $.get( "/motor/0/" + String(vrednost1), function( data ) {
         console.log("data")
+        .done(function() {
+          alert( "konec 1" );
+        })
       });
     $.get( "/motor/1/" + String(vrednost2), function( data ) {
-        //console.log(data)
+        .done(function() {
+          alert( "konec 2" );
+        })
       });
     $.get( "/motor/2/" + String(vrednost3), function( data ) {
-        //console.log(data)
+        .done(function() {
+          alert( "konec 3" );
+        })
       });
   })
 
@@ -111,9 +118,9 @@ if (currentStep == firstStep) {
         }
  
   $(".previous-step").click(function(){
-        console.log(currentStep)
+        //console.log(currentStep)
         currentStep = currentStep - 1
-        console.log(currentStep)
+        //console.log(currentStep)
         $("#" + currentStep + ".screen").show();
         $("#" + (currentStep + 1) + ".screen").hide(); 
         if (currentStep == firstStep) {
