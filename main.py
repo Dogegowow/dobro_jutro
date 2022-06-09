@@ -42,7 +42,7 @@ def run_motor(id, obrati):
   motor.setup(motors[int(id)]["step"], motors[int(id)]["dir"], motors[int(id)]["mos"])
   
   #for m in motors:
-  motor.run(motors[int(id)]["step"], motors[int(id)]["dir"], CCW, motors[int(id)]["mos"], int(obrati)) # tukaj pride spremenljivka iz url-ja
+  motor.run(motors[int(id)]["step"], motors[int(id)]["dir"], CCW, motors[int(id)]["mos"], float(obrati)) # tukaj pride spremenljivka iz url-ja
 
   return redirect(url_for("home"))
 
