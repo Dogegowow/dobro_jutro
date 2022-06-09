@@ -86,17 +86,17 @@ noUiSlider.create(handlesSlider4, {
         //console.log("data")
         
       }).done(function() {
-          alert( "konec 1" );
-        });
-    $.get( "/motor/1/" + String(vrednost2), function( data ) {
+          $.get( "/motor/1/" + String(vrednost2), function( data ) {
       }).done(function() {
-          alert( "konec 2" );
-        });
-    $.get( "/motor/2/" + String(vrednost3), function( data ) {
+          $.get( "/motor/2/" + String(vrednost3), function( data ) {
         
       }).done(function() {
           alert( "konec 3" );
         });
+        });
+        });
+    
+    
   })
 
     $(".next-step").click(function(){
